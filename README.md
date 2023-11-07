@@ -1,5 +1,6 @@
 # toast-javascript
 
+Sistema de notificações em javascript.
 
 # Modo de usar
 - Adicione o w3.css.
