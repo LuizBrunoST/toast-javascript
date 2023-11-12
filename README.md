@@ -62,3 +62,6 @@ O método `toast.exibir()` aceita três argumentos:
 3. **Conteúdo da notificação**: Esta é a mensagem informativa que será exibida na notificação.
 
 Com essas etapas concluídas, você estará pronto para utilizar o Toast-JavaScript em seu projeto, fornecendo notificações elegantes e informativas aos seus usuários.
+
+## DEMO 
+[Testar](https://luizbrunost.github.io/toast-javascript/)
