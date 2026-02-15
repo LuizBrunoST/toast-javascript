@@ -1,0 +1,32 @@
+.taptoast-container{
+    position:fixed;
+    z-index:9999;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.taptoast-top-right{ top:20px; right:20px; }
+.taptoast-top-left{ top:20px; left:20px; }
+.taptoast-bottom-right{ bottom:20px; right:20px; }
+.taptoast-bottom-left{ bottom:20px; left:20px; }
+
+.taptoast{
+    min-width:250px;
+    padding:14px 18px;
+    border-radius:10px;
+    color:#fff;
+    font-family:Arial, sans-serif;
+    box-shadow:0 4px 12px rgba(0,0,0,0.2);
+    animation: taptoastFadeIn .3s ease;
+}
+
+.taptoast.success{ background:#16a34a; }
+.taptoast.error{ background:#dc2626; }
+.taptoast.warning{ background:#f59e0b; }
+.taptoast.info{ background:#2563eb; }
+
+@keyframes taptoastFadeIn{
+    from{ transform:translateY(20px); opacity:0;}
+    to{ transform:translateY(0); opacity:1;}
+}

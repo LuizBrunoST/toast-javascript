@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>TapToast v3 - Documentação Completa</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f8;
+}
+
+header {
+    background: #111827;
+    color: #fff;
+    padding: 25px;
+    text-align: center;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+.card h2, .card h3 {
+    margin-top: 0;
+}
+
+pre {
+    background: #0f172a;
+    color: #e5e7eb;
+    padding: 15px;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+button.example-btn {
+    margin: 5px 0;
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    background: #2563eb;
+    color: #fff;
+    cursor: pointer;
+}
+
+button.example-btn:hover {
+    background: #1d4ed8;
+}
+
+.badge {
+    background: #16a34a;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+}
+
+.demo-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+</style>
+
+<!-- Inclui TapToast v3 -->
+<link rel="stylesheet" href="taptoast.css">
+<script src="taptoast.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>TapToast v3</h1>
+    <p>Documentação completa com demonstrações</p>
+</header>
+
+<div class="container">
+
+<!-- Introdução -->
+<div class="card">
+    <h2>Introdução</h2>
+    <p>
+        TapToast v3 é uma biblioteca de notificações Toast em <b>Vanilla JavaScript</b>.  
+        Leve, rápida e sem dependências externas.
+    </p>
+    <p>Recursos principais:</p>
+    <ul>
+        <li>100% Vanilla JS</li>
+        <li>CSS próprio incluso</li>
+        <li>Configuração global (posição e duração)</li>
+        <li>Empilhamento automático</li>
+        <li>Fácil de integrar em qualquer projeto</li>
+    </ul>
+</div>
+
+<!-- Instalação -->
+<div class="card">
+    <h2>Instalação</h2>
+    <p>Inclua os arquivos no seu projeto:</p>
+    <pre>
+&lt;link rel="stylesheet" href="taptoast.css"&gt;
+&lt;script src="taptoast.js"&gt;&lt;/script&gt;
+    </pre>
+</div>
+
+<!-- Configuração -->
+<div class="card">
+    <h2>Configuração</h2>
+    <p>Defina a posição e duração padrão:</p>
+    <pre>
+TapToast.config({
+    position: "top-right", // top-right | top-left | bottom-right | bottom-left
+    duration: 3000 // tempo em ms
+});
+    </pre>
+</div>
+
+<!-- Uso -->
+<div class="card">
+    <h2>Uso Básico</h2>
+    <pre>
+TapToast.success("Sucesso!");
+TapToast.error("Erro!");
+TapToast.warning("Aviso!");
+TapToast.info("Informação!");
+    </pre>
+</div>
+
+<!-- Demonstrações interativas -->
+<div class="card">
+    <h2>Demonstrações Interativas</h2>
+    <p>Clique nos botões abaixo para testar os toasts:</p>
+
+    <div class="demo-section">
+        <button class="example-btn" onclick="TapToast.success('Sucesso!')">Mostrar Success</button>
+        <button class="example-btn" onclick="TapToast.error('Erro!')">Mostrar Error</button>
+        <button class="example-btn" onclick="TapToast.warning('Aviso!')">Mostrar Warning</button>
+        <button class="example-btn" onclick="TapToast.info('Informação!')">Mostrar Info</button>
+        <button class="example-btn" onclick="TapToast.success('Duração personalizada', 1000)">
+            Success 1s
+        </button>
+        <button class="example-btn" onclick="TapToast.error('Duração longa', 7000)">
+            Error 7s
+        </button>
+    </div>
+</div>
+
+<!-- Exemplos de configuração de posição -->
+<div class="card">
+    <h2>Testando Posições</h2>
+    <p>Altere a posição global usando <code>TapToast.config</code>:</p>
+    <div class="demo-section">
+        <button class="example-btn" onclick="TapToast.config({position:'top-left'}); TapToast.success('Topo Esquerdo')">
+            Top-Left
+        </button>
+        <button class="example-btn" onclick="TapToast.config({position:'top-right'}); TapToast.success('Topo Direito')">
+            Top-Right
+        </button>
+        <button class="example-btn" onclick="TapToast.config({position:'bottom-left'}); TapToast.success('Baixo Esquerdo')">
+            Bottom-Left
+        </button>
+        <button class="example-btn" onclick="TapToast.config({position:'bottom-right'}); TapToast.success('Baixo Direito')">
+            Bottom-Right
+        </button>
+    </div>
+</div>
+
+<!-- Links úteis -->
+<div class="card">
+    <h2>Links Úteis</h2>
+    <ul>
+        <li><a href="../../index.html">Voltar para a documentação principal</a></li>
+    </ul>
+</div>
+
+</div>
+
+</body>
+</html>

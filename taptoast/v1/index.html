@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast.Class-javascript</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+</head>
+<body>
+    <div class="w3-display-bottomleft w3-display-bottomleft w3-block w3-padding w3-margin-bottom" id="msgbox" style="z-index:5;"></div>
+    <div class="w3-bar">
+        <a class="w3-bar-item w3-button w3-red" onclick="toast.exibir('erro', 'Erro!', 'Mensagem de erro.');" href="javascript:void(0)">Erro</a>
+        <a class="w3-bar-item w3-button w3-green" onclick="toast.exibir('sucesso', 'Sucesso!', 'Mensagem de sucesso.');" href="javascript:void(0)">Sucesso</a>
+        <a class="w3-bar-item w3-button w3-yellow" onclick="toast.exibir('atencao', 'Atenção!', 'Mensagem de atenção.');" href="javascript:void(0)">Atenção</a>
+        <a class="w3-bar-item w3-button w3-white" onclick="toast.exibir('', '', 'Mensagem em branco.');" href="javascript:void(0)">Branco</a>
+    </div>
+    <script src="toast.class.js"></script>
+</body>
+</html>

@@ -1,21 +1,210 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toast.Class-javascript</title>
+    <title>TapToast - Documentação</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            margin: 0;
+        }
+
+        header {
+            background: #111827;
+            color: #fff;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+        }
+
+        .version-btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 8px;
+            background: #2563eb;
+            color: #fff;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        .version-btn:hover {
+            background: #1d4ed8;
+        }
+
+        .badge {
+            background: #16a34a;
+            color: #fff;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        pre {
+            background: #0f172a;
+            color: #e5e7eb;
+            padding: 15px;
+            border-radius: 10px;
+            overflow: auto;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="w3-display-bottomleft w3-display-bottomleft w3-block w3-padding w3-margin-bottom" id="msgbox" style="z-index:5;"></div>
-    <div class="w3-bar">
-        <a class="w3-bar-item w3-button w3-red" onclick="toast.exibir('erro', 'Erro!', 'Mensagem de erro.');" href="javascript:void(0)">Erro</a>
-        <a class="w3-bar-item w3-button w3-green" onclick="toast.exibir('sucesso', 'Sucesso!', 'Mensagem de sucesso.');" href="javascript:void(0)">Sucesso</a>
-        <a class="w3-bar-item w3-button w3-yellow" onclick="toast.exibir('atencao', 'Atenção!', 'Mensagem de atenção.');" href="javascript:void(0)">Atenção</a>
-        <a class="w3-bar-item w3-button w3-white" onclick="toast.exibir('', '', 'Mensagem em branco.');" href="javascript:void(0)">Branco</a>
+
+    <header>
+        <h1>TapToast Documentation</h1>
+        <p>Notificações Toast em JavaScript — Todas as versões</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Versão atual -->
+        <div class="card">
+            <h2>Versão Atual: v3 <span class="badge">latest</span></h2>
+            <p><b>Novidades e explicação completa:</b></p>
+            <ul>
+                <li>100% Vanilla JS — sem dependências</li>
+                <li>CSS próprio incluso</li>
+                <li>Configuração global (posição e duração)</li>
+                <li>Empilhamento automático de notificações</li>
+                <li>Leve e fácil de integrar em qualquer projeto</li>
+            </ul>
+
+            <h3>Instalação</h3>
+            <pre>
+&lt;link rel="stylesheet" href="taptoast/v3/taptoast.css"&gt;
+&lt;script src="taptoast/v3/taptoast.js"&gt;&lt;/script&gt;
+    </pre>
+
+            <h3>Configuração</h3>
+            <pre>
+TapToast.config({
+    position: "top-right", // top-right | top-left | bottom-right | bottom-left
+    duration: 3000
+});
+    </pre>
+
+            <h3>Uso</h3>
+            <pre>
+TapToast.success("Sucesso!");
+TapToast.error("Erro!");
+TapToast.warning("Aviso!");
+TapToast.info("Informação!");
+    </pre>
+
+            <a href="taptoast/v3/index.html" class="version-btn">Abrir documentação completa da v3</a>
+        </div>
+
+        <!-- Outras versões (somente referência) -->
+        <div class="card">
+            <h2>Versões Anteriores</h2>
+
+            <p><b>v2:</b> Removida dependência de jQuery, melhorias internas.</p>
+            <a href="taptoast/v2/index.html" class="version-btn">Abrir v2</a>
+
+            <hr>
+
+            <p><b>v1:</b> Versão inicial, base experimental.</p>
+            <a href="taptoast/v1/index.html" class="version-btn">Abrir v1</a>
+        </div>
+
     </div>
-    <script src="toast.class.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            d = document.createElement('div');
+            $(d).addClass('w3-display-bottommiddle w3-block w3-white')
+            $(d).css('position', 'fixed')
+            $(d).css('z-index', '4')
+                .html(`
+        <span id="btnEsconderAnuncio1" class="w3-button w3-white"><i class="fa-solid fa-caret-down"></i></span>
+        <div class="w3-display-container" id="Anuncio1" style="max-width: 728px; margin: auto;">
+            <div class="bannerFooter w3-margin-top w3-margin-buttom" id="bannerFooter"></div>
+        </div>`)
+                .appendTo($('body')) //main div
+            let isHidden = false;
+            $('#btnEsconderAnuncio1').click(() => {
+                $('#Anuncio1').slideToggle(700, function () {
+                    if (isHidden) {
+                        $('#btnEsconderAnuncio1').html('<i class="fa-solid fa-caret-down"></i>');
+                        isHidden = false;
+                    } else {
+                        $('#btnEsconderAnuncio1').html('<i class="fa-solid fa-caret-up"></i>');
+                        isHidden = true;
+                    }
+                    // Calcular a altura da div Anuncio1
+                    const divHeight = $('#Anuncio1').outerHeight();
+
+                    // Definir a margem inferior do body com base na altura da div
+                    $('body').css('margin-bottom', divHeight + 60);
+                });
+            });
+
+
+            // Função para realizar a requisição AJAX e atualizar a div com o conteúdo da resposta
+            function ajax(url, divClass) {
+                $.ajax({
+                    url: url,
+                    type: 'GET',
+                    success: function (response) {
+                        // Atualiza a div com o conteúdo da resposta
+                        $(divClass).html(response);
+                    }
+                });
+            }
+
+            // Função para carregar os anúncios
+            function loadAds() {
+                // Array de URLs e classes de div correspondentes
+                var urls = [
+                    {
+                        url: 'https://api.thetapejara.com.br/api/adssites/usuario/1/site/2/bloco/6',
+                        divClass: '.bannerFooter'
+                    }
+                    // Adicione mais objetos URL/divClass conforme necessário
+                ];
+
+                // Percorre o array de URLs e classes de div
+                for (var i = 0; i < urls.length; i++) {
+                    var url = urls[i].url;
+                    var divClass = urls[i].divClass;
+
+                    // Chama a função ajax() para cada URL e classe de div correspondente
+                    ajax(url, divClass);
+                }
+            }
+
+            // Função principal que é executada quando o documento estiver pronto
+            $(document).ready(function () {
+                // Chama a função loadAds() para carregar os anúncios
+                loadAds();
+            });
+        });
+    </script>
+
 </body>
+
 </html>
